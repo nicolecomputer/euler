@@ -15,7 +15,7 @@ function isPrime(n: number, knownPrimes: number[]): boolean {
 function* primes() {
     yield 2
 
-    let knownPrimes: number[] = [2]
+    const knownPrimes: number[] = [2]
     let currentNumber = 3
 
     while (true) {

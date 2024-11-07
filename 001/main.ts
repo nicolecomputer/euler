@@ -1,12 +1,12 @@
-function isDivisble(divisor: number): (number) => boolean {
+function isDivisble(divisor: number): (number: number) => boolean {
     return (num: number) => {
         return num % divisor == 0
     }
 }
 
-function isDivisibleByAny(...divisors: number[]): (number) => boolean {
+function isDivisibleByAny(...divisors: number[]): (number: number) => boolean {
     return (num: number) => {
-        for (let divisor of divisors) {
+        for (const divisor of divisors) {
             if (isDivisble(divisor)(num)) {
                 return true
             }
@@ -20,7 +20,7 @@ function range(start: number, end: number): number[] {
         return []
     }
 
-    let nums: number[] = []
+    const nums: number[] = []
     for (let i = start; i <= end; i++) {
         nums.push(i)
     }

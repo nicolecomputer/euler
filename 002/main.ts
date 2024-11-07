@@ -13,7 +13,7 @@ function* fibonachi() {
 }
 
 function allFibonacciLessThan(num: number): number[] {
-    let result: number[] = []
+    const result: number[] = []
 
     for (const next of fibonachi()) {
         if (next > num) {
