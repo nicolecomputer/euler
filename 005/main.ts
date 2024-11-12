@@ -1,3 +1,5 @@
+import { range } from "../util/util.ts";
+
 function isDivisibleByEveryNumber(n: number, divisors: number[]): boolean {
     for (const divisor of divisors) {
         if (n % divisor !== 0) {
@@ -6,18 +8,6 @@ function isDivisibleByEveryNumber(n: number, divisors: number[]): boolean {
     }
 
     return true
-}
-
-function range(start: number, end: number): number[] {
-    if (start > end) {
-        return []
-    }
-
-    const length = end - start + 1;
-
-    return [
-        ...new Array(length).keys()
-    ].map(i => i + start)
 }
 
 function main() {

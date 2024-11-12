@@ -1,32 +1,4 @@
-function isPrime(n: number, knownPrimes: number[]): boolean {
-    if (n == 2) {
-        return true
-    }
-
-    for (const prime of knownPrimes) {
-        if (n % prime == 0) {
-            return false
-        }
-    }
-
-    return true
-}
-
-function* primes() {
-    yield 2
-
-    const knownPrimes: number[] = [2]
-    let currentNumber = 3
-
-    while (true) {
-        if (isPrime(currentNumber, knownPrimes)) {
-            knownPrimes.push(currentNumber)
-            yield currentNumber
-        }
-
-        currentNumber += 1
-    }
-}
+import { primes } from "../util/sequence/prime.ts"
 
 function primeFactors(n: number): number[] {
     for (const prime of primes()) {

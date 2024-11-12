@@ -1,3 +1,5 @@
+import { sum, range } from "../util/util.ts"
+
 function isDivisble(divisor: number): (number: number) => boolean {
     return (num: number) => {
         return num % divisor == 0
@@ -13,22 +15,6 @@ function isDivisibleByAny(...divisors: number[]): (number: number) => boolean {
         }
         return false
     }
-}
-
-function range(start: number, end: number): number[] {
-    if (start >= end) {
-        return []
-    }
-
-    const nums: number[] = []
-    for (let i = start; i <= end; i++) {
-        nums.push(i)
-    }
-    return nums
-}
-
-function sum(n: number, total: number | undefined): number {
-    return (total || 0) + n
 }
 
 function main() {
