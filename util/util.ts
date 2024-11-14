@@ -26,3 +26,20 @@ export function range(start: number, end: number): number[] {
         ...new Array(length).keys()
     ].map(i => i + start)
 }
+
+export function divisors(n: number): number[] {
+    if (n === 1) {
+        return [1]
+    }
+
+    const result: number[] = [];
+
+    for (let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            result.push(i)
+            result.push(n / i)
+        }
+    }
+
+    return result;
+}

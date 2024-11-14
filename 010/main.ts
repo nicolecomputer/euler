@@ -1,4 +1,4 @@
-import { primes } from "../util/prime.ts";
+import { primes } from "../util/sequence/prime.ts";
 import { takeUntil } from "../util/functional.ts";
 import { sum } from "../util/util.ts";
 

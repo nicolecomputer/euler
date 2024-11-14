@@ -8,6 +8,8 @@ function main() {
         .filter(isEven)
         .reduce(sum)
     console.log(a)
+
+    100 + 200 //?
 }
 
 main()

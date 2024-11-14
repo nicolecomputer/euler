@@ -1,4 +1,4 @@
-import { primes } from "../util/prime.ts"
+import { primes } from "../util/sequence/prime.ts"
 import { nthElement } from "../util/functional.ts";
 
 function main() {
