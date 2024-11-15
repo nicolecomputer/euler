@@ -41,7 +41,7 @@ function main() {
 
   for (let i = 1; i < 1_000_000; i++) {
     const chain = takeAll(collatz(i));
-
+    Z
     if (chain.length > biggestLength) {
       biggestLength = chain.length;
       biggestValue = i
