@@ -1,13 +1,11 @@
-export function* fibonachi() {
-    yield 1
-    yield 2
+export function* fibonachi(): Generator<bigint> {
+    let prev = 0n
+    let current = 1n
 
-    let prev = 1
-    let current = 2
     while (true) {
+        yield current
         const next = current + prev
         prev = current
         current = next
-        yield current
     }
 }
