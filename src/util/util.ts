@@ -1,6 +1,11 @@
 
-export function sum(n: number, sum: number = 0): number {
-    return sum + n
+export function sum(n: number, sum?: number): number;
+export function sum(n: bigint, sum?: bigint): bigint;
+export function sum(n: number | bigint, sum: number | bigint = 0): number | bigint {
+    if (typeof n === 'bigint') {
+        return n + (typeof sum === 'bigint' ? sum : BigInt(sum));
+    }
+    return (n as number) + (sum as number);
 }
 
 export function product(digit: number, product: number = 1): number {
@@ -11,8 +16,13 @@ export function square(n: number): number {
     return Math.pow(n, 2)
 }
 
-export function isEven(n: number): boolean {
-    return n % 2 === 0
+export function isEven(n: number): boolean;
+export function isEven(n: bigint): boolean;
+export function isEven(n: number | bigint): boolean {
+    if (typeof n === 'bigint') {
+        return n % BigInt(2) === BigInt(0);
+    }
+    return n % 2 === 0;
 }
 
 export function range(start: number, end: number): number[] {

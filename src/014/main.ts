@@ -1,4 +1,4 @@
-import { isEven, range } from "../util/util.ts";
+import { isEven } from "../util/util.ts";
 
 function* collatz(start: number): Generator<number> {
   yield start
@@ -27,21 +27,12 @@ function takeAll<T>(g: Generator<T>): T[] {
   return all
 }
 
-function shortestToLongest<T>(a: Array<T>, b: Array<T>): number {
-  return a.length - b.length
-}
-
-function longestToShortest<T>(a: Array<T>, b: Array<T>): number {
-  return b.length - a.length
-}
-
 function main() {
   let biggestLength = 0;
   let biggestValue = 0;
 
   for (let i = 1; i < 1_000_000; i++) {
     const chain = takeAll(collatz(i));
-    Z
     if (chain.length > biggestLength) {
       biggestLength = chain.length;
       biggestValue = i
