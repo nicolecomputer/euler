@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 
-import { isPalindromicNumber } from "./004.ts";
+import { isPalindromicNumber } from "./main.ts";
 
 Deno.test("single digits are palindromic numbers", () => {
     const result = isPalindromicNumber(1)
